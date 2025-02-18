@@ -13,33 +13,54 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 
 const Page = () => {
-  const [phoneNumber, setPhoneNumber] = useState<string>("");
-  const [check, setCheck] = useState<boolean>(true);
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const handleInputValue = (e: { target: { value: string } }) => {
-    setPhoneNumber(e.target.value);
+    setEmail(e.target.value);
+  };
+
+  const SecondHandleInputValue = (e: { target: { value: string } }) => {
+    setPassword(e.target.value);
   };
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <Card className="h-[500px] w-[450px]">
+      <Card className="h-[620px] w-[450px]">
         <CardHeader className="text-center text-[30px] font-light">
           <CardTitle>Нэвтрэх</CardTitle>
         </CardHeader>
         <CardContent className="space-y-5">
           <div className="space-y-1">
-            <p className="font-xs">Утасны дугаар</p>
+            <p className="font-xs">Email</p>
             <Input
-              placeholder="880123**"
-              value={phoneNumber}
+              placeholder="example@gmail.com"
+              value={email}
               onChange={handleInputValue}
             />
-            {phoneNumber ? null : <div className="text-red-500 text-[15px]">Утасны дугаар заавал бөглөх</div>}
+            {email ? null : (
+              <div className="text-red-500 text-[15px]">
+                Email заавал бөглөх !!!
+              </div>
+            )}
+            <p className="font-xs">Password</p>
+
+            <Input
+              placeholder="******"
+              value={password}
+              onChange={SecondHandleInputValue}
+              type="password"
+            />
+            {password ? null : (
+              <div className="text-red-500 text-[15px]">
+                Password заавал бөглөх !!!
+              </div>
+            )}
           </div>
-          <div className="flex justify-center gap-[130px]">
+          <div className="flex justify-center gap-[50px]">
             <div className="flex gap-2">
               <input type="checkbox" id="remember" value={"remember"} />
-              <label htmlFor="remember">Утас сануулах</label>
+              <label htmlFor="remember">Email Password сануулах</label>
             </div>
             <div>Нууц үг мартсан?</div>
           </div>
@@ -58,9 +79,9 @@ const Page = () => {
             Бүртгүүлэх
           </Button>
           <p>
-            Утасны дугаараа оруулан нэвтрэх эсвэл бүртгүүлэх товчийг дарж
-            zary.mn вебсайтад нэвтэрснээр таныг тус вебсайтынүйлчилгээний
-            нөхцөлболоннууцлалын бодлогыгхүлээн зөвшөөрсөнд тооцно.
+            Email Password оруулан нэвтрэх эсвэл бүртгүүлэх товчийг дарж zary.mn
+            вебсайтад нэвтэрснээр таныг тус вебсайтын үйлчилгээний нөхцөл болон
+            нууцлалын бодлогыг хүлээн зөвшөөрсөнд тооцно.
           </p>
         </CardFooter>
       </Card>
