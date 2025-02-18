@@ -13,12 +13,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Users{
-  id String @id @default(uuid())
-  username  String
-  phoneNumber String
-  email   String @unique
-  password String 
-  uptadetAt DateTime @updatedAt
-  createdAt  DateTime @default(now())
+model Categories {
+  id String @id @default (uuid())
+  categoryName String @unique
+  ImageUrl String
+ productId String
 }
