@@ -13,12 +13,35 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Users {
-  id String @id @default (uuid())
-  username String
-  phoneNumber String
+model User {
+  id String @id @default(uuid())
+  firstname String
   email String @unique
-  password String
+  phoneNumber String
+  product Product[]
+  password String 
   updatedAt DateTime @updatedAt
   createdAt DateTime @default(now())
+}
+
+model Product{
+  id String @id @default(uuid())
+  productName String
+  price Int
+  totalCount Int
+  delivery Boolean
+  description String
+  Image String
+  updatedAt DateTime @updatedAt
+  categoryId String
+  createdAt DateTime @default(now())
+  userId String
+  User User @relation(fields: [userId], references: [id])
+  category Category @relation(fields: [categoryId], references: [id])
+}
+
+model Category{
+  id String @id @default(uuid())
+  productId String
+  product Product[]
 }
