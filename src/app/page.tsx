@@ -1,9 +1,8 @@
 import { Heart } from "lucide-react";
-
 export default function Home() {
   return (
     <div>
-      <div className="flex justify-center pt-4">
+      <div className="flex flex-col items-center pt-4">
         <div className="flex-row">
           <div className=" pt-10 flex justify-center font-mono font-semibold">
             Төлбөрийн сонголтууд
