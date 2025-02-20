@@ -1,4 +1,7 @@
 import { Heart } from "lucide-react";
+import ProductInfo from "./products/[productsId]/page";
+import Page from "./products/page";
+
 export default function Home() {
   return (
     <div>
@@ -68,6 +71,8 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <ProductInfo />
+          <Page />
         </div>
       </div>
     </div>
