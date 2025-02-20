@@ -71,16 +71,3 @@ const ProductInfo = () => {
   );
 };
 export default ProductInfo;
-//    product.map(
-//     return(
-//         <div>
-//             <div>{productinfo.baraaniiAngilal}</div>
-//             <div>{productInfo.baraaniiOnsar}</div>
-//             <img src={productInfo.barraaniiZurag} />
-//             <div>{productInfo.shineHuujin}</div>
-//             <h1>{productInfo.name}</h1>
-//             <div>{productInfo.Price}</div>
-//             <div>{productInfo.productLefth}</div>
-//         </div>
-//     )
-//    )
