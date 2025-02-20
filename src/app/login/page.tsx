@@ -57,12 +57,19 @@ const Page = () => {
               </div>
             )}
           </div>
-          <div className="flex justify-center gap-[50px]">
+          <div className="flex justify-center gap-[100px]">
             <div className="flex gap-2">
               <input type="checkbox" id="remember" value={"remember"} />
-              <label htmlFor="remember">Email Password сануулах</label>
+              <label
+                className="text-gray-400 text-[13px]"
+                htmlFor="remember"
+              >
+                Email Password сануулах
+              </label>
             </div>
-            <div>Нууц үг мартсан?</div>
+            <a href="" className="text-gray-400 font-semibold text-[13px]">
+              Нууц үг мартсан?
+            </a>
           </div>
 
           <div className="flex justify-center">
