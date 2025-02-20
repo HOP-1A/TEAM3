@@ -15,6 +15,8 @@ import { useState } from "react";
 const Page = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [username, setUsername] = useState<string>("");
 
   const handleInputValue = (e: { target: { value: string } }) => {
     setEmail(e.target.value);
@@ -24,11 +26,19 @@ const Page = () => {
     setPassword(e.target.value);
   };
 
+  const ThirdHandleInputValue = (e: { target: { value: string } }) => {
+    setPhoneNumber(e.target.value);
+  };
+
+  const FourthHandleInputValue = (e: { target: { value: string } }) => {
+    setUsername(e.target.value);
+  };
+
   return (
     <div className="flex justify-center items-center h-screen">
-      <Card className="h-[620px] w-[450px]">
+      <Card className="h-[800px] w-[450px]">
         <CardHeader className="text-center text-[30px] font-light">
-          <CardTitle>Нэвтрэх</CardTitle>
+          <CardTitle>Бүртгүүлэх</CardTitle>
         </CardHeader>
         <CardContent className="space-y-5">
           <div className="space-y-1">
@@ -43,7 +53,7 @@ const Page = () => {
                 Email заавал бөглөх !!!
               </div>
             )}
-            
+
             <p className="font-xs">Password</p>
             <Input
               placeholder="******"
@@ -56,21 +66,48 @@ const Page = () => {
                 Password заавал бөглөх !!!
               </div>
             )}
+
+            <p className="font-xs">Phone number</p>
+            <Input
+              placeholder="******"
+              value={phoneNumber}
+              onChange={ThirdHandleInputValue}
+              type="password"
+            />
+            {phoneNumber ? null : (
+              <div className="text-red-500 text-[15px]">
+                Phone number заавал бөглөх !!!
+              </div>
+            )}
+
+            <p className="font-xs">Username</p>
+            <Input
+              placeholder="******"
+              value={username}
+              onChange={FourthHandleInputValue}
+              type="password"
+            />
+            {username ? null : (
+              <div className="text-red-500 text-[15px]">
+                Username заавал бөглөх !!!
+              </div>
+            )}
           </div>
-          <div className="flex justify-center gap-[100px]">
+          <div className="flex justify-center flex-col gap-3">
+            <div className=" text-gray-400 text-[14px] font-medium text-center">
+              Доорх нөхцөлүүдийг зөвшөөрч, бүртгүүлэх товч дээр дарснаар биднээс
+              баталгаажуулах код хүлээн авна.
+            </div>
             <div className="flex gap-2">
               <input type="checkbox" id="remember" value={"remember"} />
-              <label className="text-gray-400 text-[13px]" htmlFor="remember">
-                Email Password сануулах
+              <label className="text-[15px] text-center font-medium" htmlFor="remember">
+                Үйлчилгээний нөхцөл ба нууцлалын бодлого -ыг зөвшөөрч байна
               </label>
             </div>
-            <a href="" className="text-gray-400 font-semibold text-[13px]">
-              Нууц үг мартсан?
-            </a>
           </div>
 
           <div className="flex justify-center">
-            <Button className="bg-red-400 w-[390px]">Нэвтрэх</Button>
+            <Button className="bg-red-400 w-[390px]">Бүртгүүлэх</Button>
           </div>
           <div className="flex justify-center items-center space-x-2">
             <div className=" w-[165px] h-[1px] bg-gray-400"></div>
@@ -80,13 +117,8 @@ const Page = () => {
         </CardContent>
         <CardFooter className="flex flex-col text-center gap-4">
           <Button className="flex justify-center bg-red-400 w-[390px] h-[">
-            Бүртгүүлэх
+            Нэвтрэх
           </Button>
-          <p>
-            Email Password оруулан нэвтрэх эсвэл бүртгүүлэх товчийг дарж zary.mn
-            вебсайтад нэвтэрснээр таныг тус вебсайтын үйлчилгээний нөхцөл болон
-            нууцлалын бодлогыг хүлээн зөвшөөрсөнд тооцно.
-          </p>
         </CardFooter>
       </Card>
     </div>
