@@ -53,6 +53,9 @@ const Page = () => {
                 Email заавал бөглөх !!!
               </div>
             )}
+            {!email.includes("@gmail.com") && email ? (
+              <div className="text-red-500 text-[15px]">buru gmail bna</div>
+            ) : null}
 
             <p className="font-xs">Password</p>
             <Input
@@ -69,23 +72,24 @@ const Page = () => {
 
             <p className="font-xs">Phone number</p>
             <Input
-              placeholder="******"
+              placeholder="991234.."
               value={phoneNumber}
               onChange={ThirdHandleInputValue}
-              type="password"
             />
             {phoneNumber ? null : (
               <div className="text-red-500 text-[15px]">
                 Phone number заавал бөглөх !!!
               </div>
             )}
+            {phoneNumber.length !== 8 && phoneNumber ? (
+              <div className="text-red-500 text-[15px]">buru dugaar bna</div>
+            ) : null}
 
             <p className="font-xs">Username</p>
             <Input
-              placeholder="******"
+              placeholder="example_00"
               value={username}
               onChange={FourthHandleInputValue}
-              type="password"
             />
             {username ? null : (
               <div className="text-red-500 text-[15px]">
@@ -100,7 +104,10 @@ const Page = () => {
             </div>
             <div className="flex gap-2">
               <input type="checkbox" id="remember" value={"remember"} />
-              <label className="text-[15px] text-center font-medium" htmlFor="remember">
+              <label
+                className="text-[15px] text-center font-medium"
+                htmlFor="remember"
+              >
                 Үйлчилгээний нөхцөл ба нууцлалын бодлого -ыг зөвшөөрч байна
               </label>
             </div>
