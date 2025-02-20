@@ -21,6 +21,7 @@ model User {
   password    String
   updatedAt   DateTime @updatedAt
   createdAt   DateTime @default(now())
+  products    Product[] 
 }
 
 model Product {
@@ -31,9 +32,13 @@ model Product {
   updatedAt   DateTime @updatedAt
   createdAt   DateTime @default(now())
   userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  categories  Category[] 
 }
 
 model Category {
-  id        String @id @default(uuid())
+  id        String   @id @default(uuid())
   productId String
+  product   Product @relation(fields: [productId], references: [id])
 }
+
