@@ -60,10 +60,7 @@ const Page = () => {
           <div className="flex justify-center gap-[100px]">
             <div className="flex gap-2">
               <input type="checkbox" id="remember" value={"remember"} />
-              <label
-                className="text-gray-400 text-[13px]"
-                htmlFor="remember"
-              >
+              <label className="text-gray-400 text-[13px]" htmlFor="remember">
                 Email Password сануулах
               </label>
             </div>
