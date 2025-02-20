@@ -80,7 +80,7 @@ const Page = () => {
         </CardContent>
         <CardFooter className="flex flex-col text-center gap-4">
           <Button className="flex justify-center bg-red-400 w-[390px] h-[">
-            <a href="../signup">Бүртгүүлэх</a>
+            <a href="/signup">Бүртгүүлэх</a>
           </Button>
           <p>
             Email Password оруулан нэвтрэх эсвэл бүртгүүлэх товчийг дарж zary.mn
