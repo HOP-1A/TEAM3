@@ -1,4 +1,3 @@
-// "use client";
 import {
   Card,
   CardContent,
@@ -14,11 +13,6 @@ import { RefreshCw } from "lucide-react";
 import { Megaphone } from "lucide-react";
 import { ShoppingBag } from "lucide-react";
 import { LogOut } from "lucide-react";
-
-// const user = {
-//   name: "inguun inguun",
-//   createdAt: "2021/09/09",
-// };
 
 const Page = async () => {
   return (
