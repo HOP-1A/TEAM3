@@ -11,10 +11,13 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { Eye } from "lucide-react";
+import { EyeOff } from "lucide-react";
 
 const Page = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [shown, setShown] = useState<boolean>(false);
 
   const handleInputValue = (e: { target: { value: string } }) => {
     setEmail(e.target.value);
@@ -23,9 +26,10 @@ const Page = () => {
   const SecondHandleInputValue = (e: { target: { value: string } }) => {
     setPassword(e.target.value);
   };
+  console.log(shown);
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center m-20">
       <Card className="h-[620px] w-[450px]">
         <CardHeader className="text-center text-[30px] font-light">
           <CardTitle>Нэвтрэх</CardTitle>
@@ -43,19 +47,31 @@ const Page = () => {
                 Email заавал бөглөх !!!
               </div>
             )}
-            
+
             <p className="font-xs">Password</p>
-            <Input
-              placeholder="******"
-              value={password}
-              onChange={SecondHandleInputValue}
-              type="password"
-            />
+            <div className="flex">
+              <Input
+                placeholder="******"
+                value={password}
+                onChange={SecondHandleInputValue}
+                type={shown ? "text" : "password"}
+              />
+              <button
+                onClick={() => {
+                  setShown(!shown);
+                }}
+              >
+                {shown ? <EyeOff /> : <Eye />}
+              </button>
+            </div>
             {password ? null : (
               <div className="text-red-500 text-[15px]">
                 Password заавал бөглөх !!!
               </div>
             )}
+            {!email.includes("@gmail.com") && email ? (
+              <div className="text-red-500 text-[15px]">Gmail буруу байна</div>
+            ) : null}
           </div>
           <div className="flex justify-center gap-[100px]">
             <div className="flex gap-2">

@@ -11,11 +11,14 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { Eye } from "lucide-react";
+import { EyeOff } from "lucide-react";
 
 const Page = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [shown, setShown] = useState<boolean>(false);
   const [username, setUsername] = useState<string>("");
 
   const handleInputValue = (e: { target: { value: string } }) => {
@@ -35,7 +38,7 @@ const Page = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center m-20">
       <Card className="h-[800px] w-[450px]">
         <CardHeader className="text-center text-[30px] font-light">
           <CardTitle>Бүртгүүлэх</CardTitle>
@@ -54,19 +57,33 @@ const Page = () => {
               </div>
             )}
             {!email.includes("@gmail.com") && email ? (
-              <div className="text-red-500 text-[15px]">buru gmail bna</div>
+              <div className="text-red-500 text-[15px]">Gmail буруу байна</div>
             ) : null}
 
             <p className="font-xs">Password</p>
-            <Input
-              placeholder="******"
-              value={password}
-              onChange={SecondHandleInputValue}
-              type="password"
-            />
+            <div className="flex">
+              <Input
+                placeholder="******"
+                value={password}
+                onChange={SecondHandleInputValue}
+                type={shown ? "text" : "password"}
+              />
+              <button
+                onClick={() => {
+                  setShown(!shown);
+                }}
+              >
+                {shown ? <EyeOff /> : <Eye />}
+              </button>
+            </div>
             {password ? null : (
               <div className="text-red-500 text-[15px]">
                 Password заавал бөглөх !!!
+              </div>
+            )}
+            {password.length >= 5 && password ? null : (
+              <div className="text-red-500 text-[15px]">
+                Passowrd must have at least 5 letters
               </div>
             )}
 
@@ -82,7 +99,7 @@ const Page = () => {
               </div>
             )}
             {phoneNumber.length !== 8 && phoneNumber ? (
-              <div className="text-red-500 text-[15px]">buru dugaar bna</div>
+              <div className="text-red-500 text-[15px]">буруу утасны дугаар байна</div>
             ) : null}
 
             <p className="font-xs">Username</p>

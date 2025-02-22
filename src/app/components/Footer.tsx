@@ -4,7 +4,7 @@ import { Twitter } from 'lucide-react';
 import { Instagram } from 'lucide-react';
 const Footer = ()=>{
 return(
-    <div className="flex justify-center items-end h-screen">
+    <div className="flex justify-center items-end">
         <div className=" flex flex-col items-center pt-14 bg-[#ff3467] w-screen h-[396px] space-x-24">
             <div className='flex space-x-11'>
                 <div className='flex flex-col'>
