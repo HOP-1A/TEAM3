@@ -79,7 +79,7 @@ const Page = () => {
           </div>
         </CardContent>
         <CardFooter className="flex flex-col text-center gap-4">
-          <Button className="flex justify-center bg-red-400 w-[390px] h-[">
+          <Button className="flex justify-center bg-red-400 w-[390px]">
             <a href="/signup">Бүртгүүлэх</a>
           </Button>
           <p>
