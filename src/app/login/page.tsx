@@ -69,6 +69,9 @@ const Page = () => {
                 Password заавал бөглөх !!!
               </div>
             )}
+            {!email.includes("@gmail.com") && email ? (
+              <div className="text-red-500 text-[15px]">Gmail буруу байна</div>
+            ) : null}
           </div>
           <div className="flex justify-center gap-[100px]">
             <div className="flex gap-2">

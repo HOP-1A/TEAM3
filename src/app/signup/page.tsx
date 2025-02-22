@@ -57,7 +57,7 @@ const Page = () => {
               </div>
             )}
             {!email.includes("@gmail.com") && email ? (
-              <div className="text-red-500 text-[15px]">buru gmail bna</div>
+              <div className="text-red-500 text-[15px]">Gmail буруу байна</div>
             ) : null}
 
             <p className="font-xs">Password</p>
@@ -81,6 +81,11 @@ const Page = () => {
                 Password заавал бөглөх !!!
               </div>
             )}
+            {password.length >= 5 && password ? null : (
+              <div className="text-red-500 text-[15px]">
+                Passowrd must have at least 5 letters
+              </div>
+            )}
 
             <p className="font-xs">Phone number</p>
             <Input
@@ -94,7 +99,7 @@ const Page = () => {
               </div>
             )}
             {phoneNumber.length !== 8 && phoneNumber ? (
-              <div className="text-red-500 text-[15px]">buru dugaar bna</div>
+              <div className="text-red-500 text-[15px]">буруу утасны дугаар байна</div>
             ) : null}
 
             <p className="font-xs">Username</p>
