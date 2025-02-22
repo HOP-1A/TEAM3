@@ -43,7 +43,7 @@ const ProductInfo = () => {
           <div className="text-3xl mb-5">Versace absolu 90ml edp</div>
           <div className="text-4xl ">295,000 ₮</div>
           <div className="mb-5 text-slate-500">Боломжит үлдэгдэл: 4</div>
-          <div>Too shirheg</div>
+          <div>Төстэй бараанууд</div>
           <div className="flex items-center">
             <Minus className="bg-gray-200 rounded-md" onClick={minusNumber} />
             <div className="ml-5 mr-5">{number}</div>
