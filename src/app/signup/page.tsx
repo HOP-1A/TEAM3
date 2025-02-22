@@ -35,7 +35,7 @@ const Page = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center m-20">
       <Card className="h-[800px] w-[450px]">
         <CardHeader className="text-center text-[30px] font-light">
           <CardTitle>Бүртгүүлэх</CardTitle>
