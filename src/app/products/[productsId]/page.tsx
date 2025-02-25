@@ -4,6 +4,7 @@ import { Plus } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Heart } from "lucide-react";
 import { Truck } from "lucide-react";
+import Card from "@/app/product/_components/ProductCard";
 
 const ProductInfo = () => {
   const [number, setNumber] = useState<number>(1);
@@ -43,7 +44,7 @@ const ProductInfo = () => {
           <div className="text-3xl mb-5">Versace absolu 90ml edp</div>
           <div className="text-4xl ">295,000 ₮</div>
           <div className="mb-5 text-slate-500">Боломжит үлдэгдэл: 4</div>
-          <div>Too shirheg</div>
+          <div>Тоо ширхэг</div>
           <div className="flex items-center">
             <Minus className="bg-gray-200 rounded-md" onClick={minusNumber} />
             <div className="ml-5 mr-5">{number}</div>
@@ -52,11 +53,11 @@ const ProductInfo = () => {
           <div className="mb-6 text-gray-500">
             Худалдан авах тоо хэмжээгээ оруулна уу.
           </div>
-          <div className="m-5 flex justify-evenly w-[380px]">
-            <button className="bg-indigo-500 h-[40px] w-[180px] rounded-md text-white">
+          <div className="m-2 flex justify-between w-[390px]">
+            <button className="bg-indigo-500 h-[45px] w-[190px] rounded-md text-white">
               Сагслах
             </button>
-            <button className="bg-[#ff3467] h-[40px] w-[180px] br-15px rounded-md mb-5 text-white">
+            <button className="bg-[#ff3467] h-[45px] w-[190px] br-15px rounded-md mb-5 text-white">
               Худалдан авах
             </button>
           </div>
@@ -67,6 +68,10 @@ const ProductInfo = () => {
           </div>
         </div>
       </div>
+      <div className="w-[1140px]" style={{ fontSize: "29px" }}>
+        Төстэй бараанууд
+      </div>
+      <Card />
     </div>
   );
 };
