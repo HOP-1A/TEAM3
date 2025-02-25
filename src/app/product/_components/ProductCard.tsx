@@ -1,10 +1,8 @@
-import { PrismaClient } from "@prisma/client";
+"use client";
+
 import { Heart } from "lucide-react";
-const prisma = new PrismaClient();
 
-const Card = async () => {
-  const users = await prisma.user.findMany();
-
+const Card = () => {
   const products = [
     {
       imageUrl:
